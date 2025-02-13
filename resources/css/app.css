@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@source "../views";
+
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+@layer components {
+    .navbar{
+        
+    }
+
+    .btn {
+        @apply inline-block px-4 py-2 rounded bg-[#778DA9] text-black  hover:bg-gray-400 w-full sm:w-auto text-center;
+    }
+
+    .btn-purple {
+        @apply inline-block px-4 py-2 bg-[#1B263B] text-[#e0e1dd] hover:bg-gray-600;
+    }
+}
+
