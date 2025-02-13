@@ -7,8 +7,9 @@
             <h1 class="text-2xl text-[#e0e1dd] font-bold mb-4">Wat leuk dat je kijkt</h1>
             <div class=>
                 <p>
-                    bla bla bla
+                    klik hier voor een verassing!
                 </p>
+                <a href="/home/cat" class="btn btn-purple">:-)</a>
             </div>
         </div>
 @endsection

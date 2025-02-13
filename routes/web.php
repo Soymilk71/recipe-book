@@ -8,6 +8,11 @@ use App\Http\Controllers\receptcontroller;
 Route::get('/', function () {
     return view('home.index');
 });
+//cat page
+Route::get('/home/cat', function() {
+    return view('home.cat');
+});
+
 //recepten routes:
 Route::get('/recepten', [receptcontroller::class, 'index'])->name('recepten.index');
 
