@@ -37,8 +37,8 @@ Route::post('/recepten/new', [receptcontroller::class, 'new']);
 
 
 //ingredienten routes:
-Route::get('/ingredients', function () {
-    return view('ingredients.index');
+Route::get('/recipe_type', function () {
+    return view('recipe_type.index');
 });
 
 //about routes:
