@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class RecipeTypeController extends Controller
 {
-    public function new(Request $new){
-        $incomingData = $new->validate([
+    public function index(){
+        $recipe_types = RecipeType::all();
+        return view('recipe_type.index', compact('recipe_types'));
+    }
+
+    public function new(Request $request){
+
+        $request->validate([
             'name' => ['required', 'min:3'],
         ]);
-        RecipeType::create($incomingData);
 
-        return redirect()->route('recepten.index');
+        RecipeType::create($request->all());
+
+
+        return redirect()->route('recipe_type.index');
     }}
