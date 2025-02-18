@@ -29,6 +29,7 @@
                     <textarea name="recept" type="text" placeholder="Vul hier het recept in" class="p-1 border border-black rounded-sm w-xl h-50 mb-2"></textarea>
 </br>
 
+
                     <button class="btn btn-purple">Submit!</button>
                 </form>
             </div>

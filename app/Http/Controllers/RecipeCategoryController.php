@@ -2,26 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RecipeCategoryModel;
-use App\Models\RecipeType;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class RecipeCategoryController extends Controller
 {
     public function index()
     {
-        $recipe_category = RecipeCategoryModel::all();
+        $recipe_category = category::all();
         return view('recipe_category.index', compact('recipe_category'));
     }
 
     public function new(Request $request){
 
         $request = $request->validate([
-            'Category' => 'required'
+            'category' => 'required',
+            //'category_id' => 'required|exists:recipe_category,id'
         ]);
 
 
-        RecipeCategoryModel::create($request);
+        category::create($request);
 
 
         return redirect()->route('recipe_category.index');

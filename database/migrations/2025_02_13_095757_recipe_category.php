@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('recipe_category', function (Blueprint $table) {
             $table->id();
-            $table->string('Category'); //example: vegan, vegetarian, gluten free, etc.
+            $table->string('name'); // naam van de category example: vegan, vegetarian, gluten free, etc.
             $table->timestamps();
         });
     }

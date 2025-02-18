@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class receptcontroller extends Controller
 {
-    public function destroy(Recipe $recipe){
+    public function destroy(Recipe $recipe)
+    {
         $recipe->delete();
         return redirect()->route('recepten.index');
     }
-    public function update(Recipe $recipe, Request $request){
+    public function update(Recipe $recipe, Request $request)
+    {
 
             $ingevoerdeData = $request->validate([
             'titel' => ['required', 'min:3', 'max:25'],
@@ -21,10 +23,8 @@ class receptcontroller extends Controller
         $recipe->update($ingevoerdeData);
         return redirect()->route('recepten.index');
         
-        }
+    }
          
-
-
     //de variabelen in de edit functie wijst als eerste naar de recipe model, de tweede is dezelfde variabel die je hebt meegegeven in je url href in de web.php (bewerk knop)
     public function edit(Recipe $recipes){
         //hier return je de view edit en je geeft de variabele uit de url mee.
@@ -46,7 +46,8 @@ class receptcontroller extends Controller
             $messages = [
                 'titel.required' => 'Het recept moet een echt een titel hebben.',
                 'titel.min' => 'De titel moet minimaal 3 karakters bevatten.',
-                'recept.required' => 'Het recept moet wel een inhoud hebben.',            ],
+                'recept.required' => 'Het recept moet wel een inhoud hebben.',            
+        ],
 
             'titel' => ['required', 'min:3', 'max:100'],
             'beschrijving' => 'nullable',
