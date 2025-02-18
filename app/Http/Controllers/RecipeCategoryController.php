@@ -16,7 +16,7 @@ class RecipeCategoryController extends Controller
 
     public function new(Request $request){
 
-        $request->validate([
+        $request = $request->validate([
             'Category' => 'required'
         ]);
 
@@ -27,7 +27,7 @@ class RecipeCategoryController extends Controller
         return redirect()->route('recipe_category.index');
     }
 
-    public function home()
+    public function category_new_view()
     {
         return view ('recipe_category.new');
     }

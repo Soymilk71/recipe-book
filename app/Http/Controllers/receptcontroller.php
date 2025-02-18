@@ -39,7 +39,8 @@ class receptcontroller extends Controller
     }
     
     //
-    public function new(Request $new){
+    public function new(Request $new)
+    {
         //variabele ingevoerdedata is gelijk aan de request, die word gevalideerd met de validate functie.
         $ingevoerdeData = $new->validate([
             $messages = [
@@ -59,5 +60,10 @@ class receptcontroller extends Controller
         return redirect()->route('recepten.index')
         //met een melding terug als de gebruiker een recept heeft opgeslagen.
         ->with('success_title', 'Opgeslagen!') ;
+    }
+
+    public function recepten_new()
+    {
+        return view ('recepten.new');
     }
 }
