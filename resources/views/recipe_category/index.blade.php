@@ -8,5 +8,22 @@
             <a href="{{url('recipe_category/new')}}" class="btn btn-purple">New</a>
         </div>
         <div>
+            <table>
+                <tr>
+                    <th><strong>erboven</strong></th>
+                    <td> bla bla bla  </td>
+                    <td> v </td>
+                </tr>
+                <tr>
+                    <th><strong>er onder</strong></th>
+                    <td> v </td>
+                    <td> v </td>
+                </tr>
+            </table>
+
+        </div>
+    <div>
+
+        
 
 @endsection

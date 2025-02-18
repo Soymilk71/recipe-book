@@ -13,17 +13,13 @@ class RecipeCategoryController extends Controller
         return view('recipe_category.index', compact('recipe_category'));
     }
 
-    public function new(Request $request){
-
+    public function new(Request $request)
+    {
         $request = $request->validate([
-            'category' => 'required',
+            'name' => 'required',
             //'category_id' => 'required|exists:recipe_category,id'
         ]);
-
-
         category::create($request);
-
-
         return redirect()->route('recipe_category.index');
     }
 

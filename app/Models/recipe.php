@@ -6,10 +6,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\category;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class recipe extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'titel',
         'beschrijving',
