@@ -36,12 +36,14 @@ Route::post('recepten/new', function(){
 //kijk in de receptcontroller en zoek naar de "new" functie en voer deze uit.
 Route::post('/recepten/new', [receptcontroller::class, 'new']);
 
+
+
 Route::post('/recipe_category/new', [RecipeCategoryController::class, 'new']);
 
-Route::get('recipe_category/new', function () {
-    return view('recipe_category.new');
-});
-//ingredienten routes:
+Route::get('recipe_category/new', [RecipeCategoryController::class, 'home']);
+
+
+
 Route::get('/recipe_category', [RecipeCategoryController::class, 'index'])->name('recipe_category.index');
 
 //about routes:

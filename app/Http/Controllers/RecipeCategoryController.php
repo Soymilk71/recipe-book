@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class RecipeCategoryController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $recipe_category = RecipeCategoryModel::all();
         return view('recipe_category.index', compact('recipe_category'));
     }
@@ -16,11 +17,18 @@ class RecipeCategoryController extends Controller
     public function new(Request $request){
 
         $request->validate([
-            'name' => ['required', 'min:3'],
+            'Category' => 'required'
         ]);
 
-        RecipeCategoryModel::create($request->all());
+
+        RecipeCategoryModel::create($request);
 
 
         return redirect()->route('recipe_category.index');
-    }}
+    }
+
+    public function home()
+    {
+        return view ('recipe_category.new');
+    }
+}

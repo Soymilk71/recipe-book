@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class RecipeCategoryModel extends Model
 {
-    protected $table = 'recipe_type';
-    //
-    protected $fillable = ['name'];
+    protected $table = 'recipe_category';
+    
+
+    protected $fillable = ['Category'];
 }

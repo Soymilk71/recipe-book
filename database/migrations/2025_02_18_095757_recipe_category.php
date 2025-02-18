@@ -8,9 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('recipe_type', function (Blueprint $table) {
+        Schema::create('recipe_category', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); //example: vegan, vegetarian, gluten free, etc.
+            $table->string('Category'); //example: vegan, vegetarian, gluten free, etc.
             $table->timestamps();
         });
     }
@@ -20,6 +20,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recipe_type');
+        Schema::dropIfExists('recipe_category');
     }
 };
