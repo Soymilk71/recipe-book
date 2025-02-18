@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\receptcontroller;
-use App\Http\Controllers\RecipeTypeController;
+use App\Http\Controllers\RecipeCategoryController;
 
 
 //home pagina.
@@ -36,13 +36,13 @@ Route::post('recepten/new', function(){
 //kijk in de receptcontroller en zoek naar de "new" functie en voer deze uit.
 Route::post('/recepten/new', [receptcontroller::class, 'new']);
 
-Route::post('/recipe_type/new', [RecipeTypeController::class, 'new']);
+Route::post('/recipe_category/new', [RecipeCategoryController::class, 'new']);
 
-Route::get('recipe_type/new', function () {
-    return view('recipe_type.new');
+Route::get('recipe_category/new', function () {
+    return view('recipe_category.new');
 });
 //ingredienten routes:
-Route::get('/recipe_type', [RecipeTypeController::class, 'index'])->name('recipe_type.index');
+Route::get('/recipe_category', [RecipeCategoryController::class, 'index'])->name('recipe_category.index');
 
 //about routes:
 Route::get('/about', function () {

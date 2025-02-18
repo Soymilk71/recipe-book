@@ -11,7 +11,7 @@
             <ul class="flex gap-2 ">
                 <li><a class="hover:text-red-700" href="{{url('/')}}">Home</a></li>
                 <li><a class="hover:text-red-700" href="{{url('/recepten')}}">Recepten</a></li>
-                <li><a class="hover:text-red-700" href="{{url('/recipe_type')}}">Recept Types</a></li>
+                <li><a class="hover:text-red-700" href="{{url('/recipe_category')}}">Recept Types</a></li>
                 <li><a class="hover:text-red-700" href="{{url('about')}}">Over ons</a></li>
             </ul>
         </nav>
