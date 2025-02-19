@@ -22,11 +22,12 @@ Route::get('/recepten/edit/{recipes}', [receptcontroller::class, 'edit']);
 Route::put('/recepten/edit/{recipe}', [receptcontroller::class, 'update']);
 Route::delete('/recepten/delete/{recipe}', [receptcontroller::class, 'destroy']);
 Route::post('/recepten/new', [receptcontroller::class, 'new']);
+Route::get('recepten/new', [receptcontroller::class, 'indexCategories']);
 
 //recipe category routes:
 Route::post('/recipe_category/new', [RecipeCategoryController::class, 'new']);
 Route::get('recipe_category/new', [RecipeCategoryController::class, 'category_new_view']);
-Route::get('/recipe_category', [RecipeCategoryController::class, 'index'])->name('recipe_category.index');
+Route::get('/recipe_category', [RecipeCategoryController::class, 'category_new_view'])->name('recipe_category.index');
 
 //about routes:
 Route::get('/about', function () {

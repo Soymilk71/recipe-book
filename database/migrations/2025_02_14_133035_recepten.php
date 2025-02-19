@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('titel');
             $table->string('beschrijving');
             $table->longText('recept');
-            $table->foreignId('category_id')->constrained('recipe_category' , 'id');
+            $table->foreignId('category_id')->nullable()->constrained('recipe_category' , 'id');
             $table->timestamps();
         });
     }

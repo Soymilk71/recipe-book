@@ -14,7 +14,7 @@ class category extends Model
     protected $fillable = [
         'name',
     ];
-    public function recipes()
+    public function recipes(): hasMany
     {
     return $this->hasMany(recipe::class, 'category_id');
     }

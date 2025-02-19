@@ -28,8 +28,13 @@
 </br>
                     <textarea name="recept" type="text" placeholder="Vul hier het recept in" class="p-1 border border-black rounded-sm w-xl h-50 mb-2"></textarea>
 </br>
+                    <select name="category_id">
+                        <option value="">Kies een categorie</option>
 
-
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
                     <button class="btn btn-purple">Submit!</button>
                 </form>
             </div>

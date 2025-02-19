@@ -22,6 +22,9 @@
                         <span>#{{ $recipe->id}}</span>
                         <span>Titel: {{ $recipe->titel }}</span>
                     </h2>
+                    <h3 class="text-md font-bold">
+                    <span>Categorie: {{$recipe->category->name}}</span>
+                    </h3>
                     <p> beschrijving: {{ $recipe->beschrijving}}</p>
                     <a href="/recepten/{{$recipe -> id}}" class="btn btn-purple">Bekijk recept</a>
                     <a href="/recepten/edit/{{$recipe -> id}}" class="btn btn-red">Bewerk recept</a>

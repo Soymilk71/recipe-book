@@ -17,6 +17,7 @@ class recipe extends Model
         'titel',
         'beschrijving',
         'recept',
+        'category_id'
     ];
     //bob code
     //belongsTo zoekt naar de method, en de id waarde uit het tabel. hier haalt hij alle data op gekoppeld aan die id 

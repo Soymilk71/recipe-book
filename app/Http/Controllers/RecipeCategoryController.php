@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class RecipeCategoryController extends Controller
 {
-    public function index()
-    {
-        $recipe_category = category::all();
-        return view('recipe_category.index', compact('recipe_category'));
-    }
+
 
     public function new(Request $request)
     {
