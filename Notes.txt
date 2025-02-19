@@ -1,0 +1,28 @@
+This is a text file im keeping to make notes of what i have yet to do, its gonna be a lot. And i need a global view of my to do's
+
+-implement recipe categories, = DONE 
+    -give each recipe categories (vegan, gluten free, etc)
+    -allow to filter recipes by categories 
+    -make relations between recipes
+    -assign multiple categories to a recipe
+
+
+-implement img uploading for each recipe
+
+
+-make app responsive and dynamic for different screen sizes
+    -make it look beautiful
+
+
+-search option
+    -search by categorie
+    -search by recipe name
+    -1 search bar, no clicks. should give related results when i type "vegan" in search bar but should also get recipe names like "vegan risotto"
+
+
+-login option for multiple users
+    -only delete and edit recipes made by specific users
+    -encrypt pswd data
+
+
+-keep composure
