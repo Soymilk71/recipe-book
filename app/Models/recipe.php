@@ -21,7 +21,7 @@ class recipe extends Model
     //bob code
     //belongsTo zoekt naar de method, en de id waarde uit het tabel. hier haalt hij alle data op gekoppeld aan die id 
     public function category(): BelongsTo {
-        return $this->belongsTo(category::class, 'id');
+        return $this->belongsTo(category::class, 'category_id');
     }
 
 }
