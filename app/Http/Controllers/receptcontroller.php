@@ -23,25 +23,32 @@ class receptcontroller extends Controller
         ]);
         $recipe->update($ingevoerdeData);
         return redirect()->route('recepten.index');
-        
     }
          
     //de variabelen in de edit functie wijst als eerste naar de recipe model, de tweede is dezelfde variabel die je hebt meegegeven in je url href in de web.php (bewerk knop)
     public function edit(Recipe $recipes){
         //hier return je de view edit en je geeft de variabele uit de url mee.
-        return view ('recepten.edit', ['recipes' => $recipes]);
-
+        return view ('recepten.edit', [
+            'recipes' => $recipes
+        ]);
     }
+
     public function index()
     {
-        $recipes = recipe::all();
+        $recipes = recipe::paginate(15);
 
-        return view('recepten.index', ['recipes' => $recipes]);
+        return view('recepten.index', [
+            'recipes' => $recipes
+        ]);
     }
+
     public function indexCategories()
     {
         $categories = category::all();
-        return view('recepten.new', ['categories' => $categories]);
+
+        return view('recepten.new', [
+            'categories' => $categories
+        ]);
     }
     
     //

@@ -31,8 +31,10 @@
                 </div>
             </div>
         @endforeach
-
-
+        </div>
+        <!-- dit is de paginatie van de controller. Veels te simpel????? -->
+        <div>
+            {{$recipes->links()}}
         </div>
     </div>
 </div>
