@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
   </head>
-  <body style="background-color:#415A77">  
+  <body style="background-color:#e0e1dd">  
     <header class="bg-[#0d1b2a]   text-[#e0e1dd] py-3 mb-4">
         <nav class="container ">
             <ul class="flex gap-2 ">

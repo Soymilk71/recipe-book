@@ -13,29 +13,55 @@
         <div class="mb-4">
             <a href="{{url('recepten/new')}}" class="btn btn-purple">New</a>
         </div>
+    <div>
         <div>
-        @foreach ($recipes as $recipe)
-        
-            <div class="rounded-md shadow-gray-400 shadow-sm bg bg-[#E0E1DD] mb-4"  >
-                <div class="p-4 space-y-1">
-                    <h2 class="text-lg font-bold">
-                        <span>#{{ $recipe->id}}</span>
-                        <span>Titel: {{ $recipe->titel }}</span>
-                    </h2>
-                    <h3 class="text-md font-bold">
-                    <span>Categorie: {{$recipe->category->name}}</span>
-                    </h3>
-                    <p> beschrijving: {{ $recipe->beschrijving}}</p>
-                    <a href="/recepten/{{$recipe -> id}}" class="btn btn-purple">Bekijk recept</a>
-                    <a href="/recepten/edit/{{$recipe -> id}}" class="btn btn-red">Bewerk recept</a>
-                </div>
-            </div>
-        @endforeach
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-left px-4 border border-gray-300">
+                            ID
+                        </th>
+                        <th class="text-left px-4 border border-gray-300">
+                           Titel
+                        </th>
+                        <th class="text-left px-4 border border-gray-300">
+                            Categorie
+                        </th>
+                        <th class="text-left px-4 border border-gray-300">
+                            Beschrijving
+                        </th>
+                        <th class="text-left px-4 border border-gray-300">
+                            Bewerk
+                        </th>
+                    </tr>
+                </thead>
+                @foreach($recipes as $recipe)
+                <tbody>
+                    <tr>
+                        <td class=" py-3 text-center border border-gray-300">
+                            #{{$recipe->id}}
+                        </td>
+                        <td class="px-4 py-3 border border-gray-300">
+                            {{$recipe->titel}}
+                        </td>
+                        <td class="px-4 py-3 border border-gray-300">
+                            {{$recipe->category->name ?? null}}
+                        </td>
+                        <td class="px-4 py-3 border border-gray-300">
+                            {{$recipe->beschrijving}}
+                        </td>
+                        <td class="px-4 py-2 border border-gray-300"|>
+                        <a href="/recepten/edit/{{$recipe -> id}}" class="underline">Bekijk recept</a>
+                        </td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
         </div>
-        <!-- dit is de paginatie van de controller. Veels te simpel????? -->
-        <div>
-            {{$recipes->links()}}
-        </div>
+    </div>
+    <!-- dit is de paginatie van de controller. Veels te simpel????? -->
+    <div>
+        {{$recipes->links()}}
     </div>
 </div>
 @endsection

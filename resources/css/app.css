@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss"; 
 @source "../views";
 
 
@@ -12,12 +12,16 @@
         
     }
 
-    .btn {
+    .btn-default {
         @apply inline-block px-4 py-2 rounded bg-[#778DA9] text-black  hover:bg-gray-400 w-full sm:w-auto text-center;
     }
 
-    .btn-purple {
-        @apply inline-block px-4 py-2 bg-[#1B263B] text-[#e0e1dd] hover:bg-gray-600;
+    .btn-black {
+        @apply inline-block px-4 py-2 rounded bg-[#1B263B] text-[#e0e1dd] hover:bg-gray-600;
+    }
+
+    .recipe-card{
+        @apply bg-[#778da9] shadow-gray-400 rounded-lg mb-4;
     }
 }
 
