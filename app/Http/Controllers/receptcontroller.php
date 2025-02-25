@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\recipe;
 use App\Models\category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class receptcontroller extends Controller
 {
@@ -16,22 +17,42 @@ class receptcontroller extends Controller
     public function update(Recipe $recipe, Request $request)
     {
 
-            $ingevoerdeData = $request->validate([
+        $validator = Validator::make($request->all(),[
             'titel' => ['required', 'min:3', 'max:25'],
             'beschrijving' => 'nullable',
             'recept' => 'required',
+            'category_id' => 'required',
         ]);
-        $recipe->update($ingevoerdeData);
-        return redirect()->route('recepten.index');
+
+        if ($validator->fails()){
+            return response()->json([
+                'succes' => false,
+                'errors' => $validator->errors()
+            ], 422);
+        }
+        $recipe->update($request->all());
+        return response()->json([
+            'succes' => true,
+            'message' => 'gelukt',
+            'recipe' => $recipe
+        ]);
+        // //dd($ingevoerdeData);
+        // $recipe->update($request->all());
+        // return response()->json( [ 'success' => 'Yeaaa' ] );
+        // // return redirect()->route('recepten.index');
     }
          
     //de variabelen in de edit functie wijst als eerste naar de recipe model, de tweede is dezelfde variabel die je hebt meegegeven in je url href in de web.php (bewerk knop)
-    public function edit(Recipe $recipes){
+    public function edit(Recipe $recipe, category $categories)
+    {
+        $categories = category::all();
         //hier return je de view edit en je geeft de variabele uit de url mee.
         return view ('recepten.edit', [
-            'recipes' => $recipes
+            'recipes' => $recipe,
+            'categories' => $categories
         ]);
     }
+
 
     public function index()
     {

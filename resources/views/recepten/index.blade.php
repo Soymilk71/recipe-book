@@ -14,7 +14,7 @@
             <a href="{{url('recepten/new')}}" class="btn btn-purple">New</a>
         </div>
     <div>
-        <div>
+        <div class="grid">
             <table>
                 <thead>
                     <tr>
@@ -45,7 +45,7 @@
                             {{$recipe->titel}}
                         </td>
                         <td class="px-4 py-3 border border-gray-300">
-                            {{$recipe->category->name ?? null}}
+                            {{$recipe->category->name ?? null}} 
                         </td>
                         <td class="px-4 py-3 border border-gray-300">
                             {{$recipe->beschrijving}}

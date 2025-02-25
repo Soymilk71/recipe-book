@@ -35,7 +35,7 @@
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
-                    <button class="btn btn-purple">Submit!</button>
+                    <button class="btn btn-black">Submit!</button>
                 </form>
             </div>
     </div>

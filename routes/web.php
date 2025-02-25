@@ -20,9 +20,9 @@ Route::get('/home/cat', function()
 //recepten routes:
 Route::get('/recepten', [receptcontroller::class, 'index'])->name('recepten.index');
 Route::get('recepten/new', [receptcontroller::class, 'recepten_new']);
-Route::get('/recepten/edit/{recipes}', [receptcontroller::class, 'edit']);
-Route::put('/recepten/edit/{recipes}', [receptcontroller::class, 'update']);
-Route::delete('/recepten/delete/{recipes}', [receptcontroller::class, 'destroy']);
+Route::get('/recepten/edit/{recipe}', [receptcontroller::class, 'edit']);
+Route::put('/recepten/edit/{recipe}', [receptcontroller::class, 'update']);
+Route::delete('/recepten/delete/{recipe}', [receptcontroller::class, 'destroy']);
 Route::post('/recepten/new', [receptcontroller::class, 'new']);
 Route::get('recepten/new', [receptcontroller::class, 'indexCategories']);
 

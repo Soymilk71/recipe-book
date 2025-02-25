@@ -11,7 +11,7 @@ class RecipeCategoryController extends Controller
     public function destroy(category $recipe_category)
     {
         recipe::where('category_id', $recipe_category->id)->update(['category_id' => null]);
-
+        
         $recipe_category->delete();
         return redirect()->route('recipe_category.index');
     }
@@ -32,7 +32,7 @@ class RecipeCategoryController extends Controller
             //'recept' => 'required',
         ]);
         $recipe_category->update($ingevoerdeData);
-        return redirect()->route('recepten.index');
+        return redirect()->route('recipe_category.index');
     }
     public function new(Request $request)
     {
